@@ -1,0 +1,30 @@
+// Portrait Tablet
+@media (min-width:768px) and (max-width: 1024px) {
+
+}
+
+/* For landscape layouts only - iPad */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+}
+
+// Small desktop screens and landscape tablet
+@media (max-width:1024px) {
+
+}
+
+/* ipad Mini Portrait */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+}
+
+/* ipad Mini Landscape */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+}

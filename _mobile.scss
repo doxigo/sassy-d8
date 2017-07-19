@@ -1,0 +1,34 @@
+// All Mobiles up to portrait tablet
+@media (max-width: 768px) {
+    
+}
+
+// Mobile Large to smallest
+@media (max-width:480px)  {
+
+}
+
+// retarded mobile width!! some shitty androids
+@media (max-width:415px) {
+
+}
+
+// Iphone 4
+@media (max-width:320px) {
+
+}
+
+/* Mobile Landscape */
+@media all and (max-width: 767px) and (orientation: landscape) {
+
+}
+
+// iphone 6 only
+@media only screen
+    and (min-device-width : 414px)
+    and (max-device-width : 736px)
+    and (orientation : landscape)
+    and (-webkit-min-device-pixel-ratio : 3)
+{
+
+}
