@@ -1,0 +1,97 @@
+// Typography
+// -----------------------------------------------------------------------------
+
+// IRANYekan font: Bold & Regular  
+@font-face {
+  font-family: 'iranyekan';
+   src: url('../fonts/iranyekan/woff/iranyekanwebbold(fanum).woff') format('woff'),
+        url('../fonts/iranyekan/eot/iranyekanwebbold(fanum).eot') format('eot'),
+        url('../fonts/iranyekan/woff2/iranyekanwebbold(fanum).woff2') format('woff2'),
+        url('../fonts/iranyekan/ttf/iranyekanwebbold(fanum).ttf') format('truetype'),
+        url('../fonts/iranyekan/svg/iranyekanwebbold(fanum).svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'iranyekan';
+    src: url('../fonts/iranyekan/woff/iranyekanwebregular(fanum).woff') format('woff'),
+         url('../fonts/iranyekan/eot/iranyekanwebregular(fanum).eot') format('eot'),
+         url('../fonts/iranyekan/woff2/iranyekanwebregular(fanum).woff2') format('woff2'),
+         url('../fonts/iranyekan/ttf/iranyekanwebregular(fanum).ttf') format('truetype'),
+         url('../fonts/iranyekan/svg/iranyekanwebregular(fanum).svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Shabnam font: Bold & Light  
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/shabnam/shabnam-bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/shabnam/shabnam-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/shabnam/shabnam-bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/shabnam/shabnam-bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/shabnam/shabnam-light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/shabnam/shabnam-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/shabnam/shabnam-light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/shabnam/shabnam-light.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Vazir font: Regular  
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/vazir/vazir-light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/vazir/vazir-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/vazir/vazir-light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/vazir/vazir-light.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 300;
+    font-style: normal;
+}
+
+// Sahel font: Black, Bold & Regular
+@font-face {
+    font-family: 'sahel';
+    src: url('../fonts/sahel/sahel-black.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/sahel/sahel-black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/sahel/sahel-black.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/sahel/sahel-black.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sahel';
+    src: url('../fonts/sahel/sahel-bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/sahel/sahel-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/sahel/sahel-bold.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/sahel/sahel-bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sahel';
+    src: url('../fonts/sahel/sahel.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/sahel/sahel.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/sahel/sahel.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/sahel/sahel.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Lalezar font: Regular
+@font-face {
+    font-family: 'lalezar';
+    src: url('../fonts/lalezar/lalezar-regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/lalezar/lalezar-regular.woff2') format('woff2'); /* Pretty Modern Browsers */
+    font-weight: 400;
+    font-style: normal;
+}
