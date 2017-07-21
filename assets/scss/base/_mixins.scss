@@ -1,2 +1,241 @@
 // Mixins
 // -----------------------------------------------------------------------------
+
+// Centering an item
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+/*--------------------------------
+Pseudo: 
+When using ::before and ::after you'll always need these three.
+
+Usage:
+div::after {
+    @include pseudo;
+    top: -1rem; left: -1rem;
+    width: 1rem; height: 1rem;
+}
+
+*/
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+
+
+// Triangles
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+/*--------------------------------
+	Media Queries
+	used for outputting content either between media query tags
+	example: basic usage
+	.element {
+		width: 50%;
+		@include mq('tablet-small') {
+			width: 20%;
+		}
+	}
+	example: using max-width
+	.element {
+		width: 50%;
+		@include mq('tablet-small', 'max') {
+			width: 20%;
+		}
+	}
+*/
+
+@mixin mq($size, $type: min, $property: width) {
+    
+        @if map_has_key($breakpoints, $size) {
+            $size: map_get($breakpoints, $size);
+        }
+    
+        @if $type == max {
+            $negative: if($media-query-units == em, 0.01em, 1px);
+            $size: $size - $negative;
+        }
+    
+        @media only screen and (#{$type}-#{$property}: $size) {
+            @content;
+        }
+    
+    }}
+    }
+}
+
+
+/*--------------------------------
+    Animations and keyframes
+    
+    example: basic usage
+    
+    @include keyframes(slide-down) {
+    0% { opacity: 1; }
+    90% { opacity: 0; }
+    }
+
+    .element {
+    width: 100px;
+    height: 100px;
+    background: black;
+    @include animation('slide-down 5s 3');
+    }
+*/
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+/*--------------------------------
+    Transitions
+    
+    example: basic usage
+    
+    a {
+        color: gray;
+        @include transition(color .3s ease);
+        &:hover {
+            color: black;
+        }
+    }
+*/
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+
+  /*--------------------------------
+    Clearfix
+    
+    example: basic usage
+    
+    .container-with-floated-children {
+        @extend %clearfix;
+    }
+
+*/
+
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+/*--------------------------------
+Buttons
+example: Simple flat buttons
+*/
+
+@mixin button-blank {
+    color: $white;
+    border: 1px solid $white;
+    background-color: transparent;
+    display: inline-block;
+    transition: all .3s;
+    font-size: 1.3em;
+    padding: 1em 3em;
+
+    &:hover {
+        color: $black;
+        background-color: $white;
+        border-color: $black;
+    }
+}
+
+@mixin button-blank-red {
+    color: $red;
+    border: 1px solid $red;
+    background-color: transparent;
+    display: inline-block;
+    transition: all .3s;
+    font-size: 1.3em;
+    padding: 0.5em 2em;
+
+    &:hover {
+        color: $white;
+        background-color: $red;
+        border-color: $red;
+    }
+}
+
+@mixin button-red {
+        color: $white;
+        background-color: $red;
+        border: 1px solid $white;
+        display: inline-block;
+        transition: all .3s;
+        font-size: 1.3em;
+        padding: 1em 3em;
+
+        &:hover {
+            background-color: darken($red, 10%);
+        }
+}
+
+  
