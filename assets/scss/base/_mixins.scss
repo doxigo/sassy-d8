@@ -81,21 +81,19 @@ div::after {
 
 @mixin mq($size, $type: min, $property: width) {
     
-        @if map_has_key($breakpoints, $size) {
-            $size: map_get($breakpoints, $size);
-        }
-    
-        @if $type == max {
-            $negative: if($media-query-units == em, 0.01em, 1px);
-            $size: $size - $negative;
-        }
-    
-        @media only screen and (#{$type}-#{$property}: $size) {
-            @content;
-        }
-    
-    }}
+    @if map_has_key($breakpoints, $size) {
+        $size: map_get($breakpoints, $size);
     }
+
+    @if $type == max {
+        $negative: if($media-query-units == em, 0.01em, 1px);
+        $size: $size - $negative;
+    }
+
+    @media only screen and (#{$type}-#{$property}: $size) {
+        @content;
+    }
+
 }
 
 
