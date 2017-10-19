@@ -71,6 +71,10 @@ $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !defaul
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
+$font-family-iranyekan:   "iranyekan";
+$font-family-iransans:    "iransans";
+$font-family-sahel:       "sahel";
+$font-family-lalezar:     "lalezar";
 
 $font-size-base:          14px !default;
 $font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
@@ -246,7 +250,7 @@ $screen-phone:               $screen-xs-min !default;
 
 // Small screen / tablet
 // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
-$screen-sm:                  768px !default;
+$screen-sm:                  769px !default;
 $screen-sm-min:              $screen-sm !default;
 $screen-tablet:              $screen-sm-min !default;
 
