@@ -1,0 +1,43 @@
+<?php
+/**
+ * @file
+ * Theme functions
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+function milaniztheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
+}
+
+function milaniztheme_preprocess_html (&$variables) {
+
+    if ($node = \Drupal::request()->attributes->get('node')) {
+        $variables['attributes']['class'][] = 'node-type-' . $node->getType();
+    }
+
+    if ($node = \Drupal::request()->attributes->get('node')) {
+      $variables['attributes']['class'][] = 'page-node-' . $node->id();
+    }
+}
+
+function milaniztheme_preprocess_page (&$variables) {
+    if (!array_key_exists('node', $variables))
+    return;
+    $node = $variables['node'];
+    $variables['site_name'] = \Drupal::config('system.site')->get('name');
+    $variables['baseURL'] = $GLOBALS['base_url'];
+
+    $variables['author'] = \Drupal::entityTypeManager()->getViewBuilder('user')->view($variables['node']->getOwner(), 'nodeview');
+}
+
+function milaniztheme_preprocess_node(&$variables) {
+  $variables['baseURL'] = $GLOBALS['base_url'];
+}
