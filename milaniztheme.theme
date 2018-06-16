@@ -19,13 +19,20 @@ function milaniztheme_theme_suggestions_page_alter(array &$suggestions, array $v
 
 function milaniztheme_preprocess_html (&$variables) {
 
-    if ($node = \Drupal::request()->attributes->get('node')) {
-        $variables['attributes']['class'][] = 'node-type-' . $node->getType();
-    }
+  if ($node = \Drupal::request()->attributes->get('node')) {
+      $variables['attributes']['class'][] = 'node-type-' . $node->getType();
+  }
 
-    if ($node = \Drupal::request()->attributes->get('node')) {
-      $variables['attributes']['class'][] = 'page-node-' . $node->id();
-    }
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['attributes']['class'][] = 'page-node-' . $node->id();
+  }
+
+  // The getRoles() method will return us the machine names, so there is no
+  // need to process roles names additionally. However, I suggest prefixing
+  // the names with "role-", so it's more obvious.
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
 }
 
 function milaniztheme_preprocess_page (&$variables) {
